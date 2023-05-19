@@ -1,0 +1,14 @@
+// Create your own mapping to insert custom variables
+
+// Overriding spacers for margins and padding
+$spacer: 1rem !default;
+$custom-spacers: (
+    20: $spacer * 1.25,
+    40: $spacer * 2.5,
+    32: $spacer * 2,
+    50: $spacer * 3.125,
+    56: $spacer * 3.5,
+    80: $spacer * 5
+);
+// Merge the maps
+$spacers: map-merge($spacers, $custom-spacers);

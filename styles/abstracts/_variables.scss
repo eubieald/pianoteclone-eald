@@ -1,0 +1,43 @@
+// Overriding pre-defined variables in node_modules variables.scss
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+// Font Families
+$font-family-base: 'Open Sans', sans-serif;
+$link_font-family: 'Bebas Neue', sans-serif;
+
+// Font Weight
+$primary_font-weight: 900;
+
+// Text
+$link_line-height-base: 16px;
+
+$grid-breakpoints: (
+    xs: 0,
+    sm: 640px,
+    md: 861px,
+    lg: 992px,
+    xl: 1024px,
+    xxl: 1400px
+);
+
+// sass variable map
+$page_background-color: #0c1524;
+$primary-color: #f61a30;
+$secondary-color: #a1afc9;
+
+$link_secondary-hover-color: #f84b5c;
+
+$link_secondary-box-shadow-color: #00000059;
+
+:root {
+  --page_background-color: #{$page_background-color};
+  --primary-color: #{$primary-color};
+  --secondary-color: #{$secondary-color};
+  --link_font-family: #{$link_font-family};
+  --primary_font-weight: #{$primary_font-weight};
+  --link_line-height-base: #{$link_line-height-base};
+  --link_secondary-hover-color: #{$link_secondary-hover-color};
+  --link_secondary-box-shadow-color: #{$link_secondary-box-shadow-color};
+}

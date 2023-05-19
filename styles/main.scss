@@ -1,0 +1,269 @@
+// Custom.scss
+// Option A: Include all of Bootstrap
+// Include any default variable overrides here (though functions won't be available)
+@import "./abstracts/variables";
+
+// Import Bootstrap functions, vars, mixins
+@import "../node_modules/bootstrap/scss/functions";
+@import "../node_modules/bootstrap/scss/variables";
+
+// Import map ammends
+@import "./abstracts/map-ammends";
+
+// Bootstrap main import
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+
+// Then add additional custom code here
+.diagonal-design {
+    height: 20px;
+    background: linear-gradient(to bottom right,
+            transparent calc(50% - 1px),
+            transparent, var(--page_background-color) calc(50% + 1px));
+}
+
+.play-fave-songs {
+    background-color: var(--page_background-color);
+
+    .container {
+        max-width: 1152px;
+    }
+
+
+    strong {
+        font-weight: var(--primary_font-weight);
+    }
+
+    p {
+        font-weight: $font-weight-normal;
+
+        &.leading-tight>strong {
+            font-weight: $font-weight-bold;
+        }
+    }
+
+    .two-column-container {
+        flex-wrap: wrap;
+
+        .icon-text-column {
+            text-align: left;
+
+            .text-wrapper {
+                h5 {
+                    margin-bottom: 0;
+                }
+
+                p {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+
+    .border-pianote {
+        display: block;
+        width: 100%;
+        border-radius: 50px;
+        color: white;
+        box-shadow: 0 0 7px var(--link_box-shadow-color);
+        font-family: var(--link_font-family);
+        text-decoration: none;
+        text-transform: uppercase;
+        line-height: var(--link_line-height-base);
+
+        &.song-list {
+            border: 1px solid var(--primary-color);
+            color: var(--primary-color);
+
+            &:hover {
+                background-color: white;
+            }
+        }
+
+        &:not(.song-list) {
+            background-color: var(--primary-color);
+
+            &:hover {
+                color: white;
+                background-color: var(--link_secondary-hover-color);
+            }
+        }
+    }
+
+    p>em {
+        color: var(--secondary-color);
+    }
+}
+
+// CUSTOM BREAKPOINTS IMPLEMENTATION:
+// No media query necessary for xs breakpoint as it's effectively `@media (min-width: 0) { ... }`
+@include media-breakpoint-down(xs) {
+    .play-fave-songs {
+        .container {
+            h2>strong {
+                font-size: 24px;
+            }
+        }
+
+        p {
+            font-size: 14px;
+
+            &.leading-tight {
+                font-size: 15px;
+                line-height: 18.75px;
+            }
+
+            &>em {
+                display: block;
+                margin: 20px 0 0;
+            }
+        }
+
+        .two-column-container {
+            .video-column {
+                height: 256px;
+            }
+
+            svg {
+                max-height: 100%;
+                max-width: 100%;
+                height: 24px;
+            }
+
+            .icon-wrapper {
+                width: 40px;
+            }
+
+            .text-wrapper {
+                h5 {
+                    line-height: 16px;
+                }
+
+                strong {
+                    font-size: $font-size-base;
+                    line-height: var(--link_line-height-base);
+                }
+            }
+        }
+
+        .border-pianote {
+            padding: 10px 30px 6px;
+            letter-spacing: 1.26px;
+
+            &.song-list {
+                padding: 8px 26px 6px;
+            }
+        }
+    }
+}
+
+@include media-breakpoint-up(sm) {
+    .diagonal-design {
+        height: 40px;
+    }
+
+    .play-fave-songs {
+        .two-column-container {
+            .video-column {
+                height: 384px;
+            }
+
+            .icon-text-column {
+                max-width: 328px;
+
+                .icon-wrapper {
+                    width: 100%;
+                    max-width: 56px;
+                    max-height: 64px;
+
+                    >svg {
+                        height: 40px;
+                        width: 40px;
+                    }
+                }
+
+                div:nth-child(2) .text-wrapper {
+                    width: 100%;
+
+                    p {
+                        white-space: pre-line;
+                    }
+                }
+            }
+        }
+
+        .border-pianote {
+            width: 256px;
+            margin: 0 4px;
+        }
+    }
+}
+
+@include media-breakpoint-up(md) {
+    .play-fave-songs {
+        .container {
+            h2>strong {
+                font-size: 30px;
+            }
+        }
+
+        .two-column-container {
+            .video-column {
+                max-width: 484px;
+            }
+
+            .icon-text-column {
+                max-width: 329px;
+
+                .text-wrapper {
+                    strong {
+                        font-size: 18px;
+                    }
+                }
+            }
+        }
+
+        .border-pianote {
+            padding: 12px 30px 10px;
+            font-size: 18px;
+            letter-spacing: 1.8px;
+
+            &.song-list {
+                padding: 10px 28px 8px;
+            }
+        }
+    }
+}
+
+@include media-breakpoint-up(xl) {
+    .play-fave-songs {
+        .container {
+            h2>strong {
+                font-size: 36px;
+            }
+
+            .leading-tight {
+                font-size: $font-size-base;
+            }
+        }
+
+        .two-column-container {
+            .icon-text-column {
+                max-width: 386px;
+
+                .text-wrapper {
+                    strong {
+                        font-size: 20px;
+                    }
+                }
+
+                div:last-child .text-wrapper {
+                    width: 100%;
+
+                    p {
+                        white-space: pre-line;
+                    }
+                }
+            }
+        }
+    }
+}
