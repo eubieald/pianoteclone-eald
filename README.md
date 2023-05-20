@@ -5,6 +5,8 @@ Pianote Clone
 ## Description
 
 FE applicant exercise for cloning a section in https://www.pianote.com/
+You can compare this with my online github pages:
+https://eubieald.github.io/pianoteclone-eald/
 
 ## Getting Started
 
