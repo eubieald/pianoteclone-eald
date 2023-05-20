@@ -22,19 +22,7 @@ module.exports = {
             {
                 test: /\.scss$/i,
                 use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"]
-            },
-            {
-                test: /\.(woff(2)?|eot|ttf|otf|svg)(\?v=\d+\.\d+\.\d+)?$/,
-                use: [
-                  {
-                    loader: 'file-loader',
-                    options: {
-                      name: '[name].[ext]',
-                      outputPath: 'fonts/' // Output folder for fonts
-                    }
-                  }
-                ]
-              }
+            }
         ]
     }
 }
